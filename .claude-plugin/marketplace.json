@@ -1,0 +1,20 @@
+{
+  "name": "gui-anything",
+  "owner": {
+    "name": "gui-anything contributors"
+  },
+  "metadata": {
+    "description": "Build cross-platform GUI interfaces for any software using the gui-anything harness methodology."
+  },
+  "plugins": [
+    {
+      "name": "gui-anything",
+      "source": "./gui-anything-plugin",
+      "description": "Build cross-platform GUI interfaces for any software using AI agents and the A2UI protocol.",
+      "author": {
+        "name": "gui-anything contributors"
+      },
+      "category": "development"
+    }
+  ]
+}

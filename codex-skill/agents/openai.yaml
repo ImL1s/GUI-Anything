@@ -1,0 +1,4 @@
+interface:
+  display_name: "GUI-Anything"
+  short_description: "Build or refine GUI-Anything harnesses from Codex."
+  default_prompt: "Use GUI-Anything to build, refine, test, or validate a GUI harness for the user's target software or source repository."

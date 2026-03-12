@@ -1,0 +1,7 @@
+{
+  "name": "gui-anything",
+  "description": "Build cross-platform GUI interfaces for any software using the gui-anything harness methodology.",
+  "author": {
+    "name": "gui-anything contributors"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "title": "Calculator GUI",
+    "description": "AI-controllable GUI for the Python Calculator",
+    "version": "1.0.0",
+    "source": "examples/calculator/calculator.py",
+    "generated_by": "gui-anything"
+  },
+  "surfaces": [
+    {
+      "id": "main",
+      "type": "sidebar-panel",
+      "title": "Calculator",
+      "components": [
+        {
+          "id": "sidebar",
+          "type": "navigation",
+          "items": [
+            {"id": "arithmetic", "label": "Arithmetic", "icon": "calculator"},
+            {"id": "scientific", "label": "Scientific", "icon": "flask-conical"},
+            {"id": "memory", "label": "Memory", "icon": "brain"},
+            {"id": "history", "label": "History", "icon": "clock"},
+            {"id": "export", "label": "Export", "icon": "download"}
+          ]
+        },
+        {
+          "id": "action-panel",
+          "type": "dynamic-form",
+          "source": "active-group"
+        },
+        {
+          "id": "preview",
+          "type": "output-display",
+          "formats": ["text", "json", "table"]
+        },
+        {
+          "id": "status-bar",
+          "type": "status",
+          "fields": ["last_result", "memory", "history_count"]
+        }
+      ]
+    }
+  ],
+  "actions": {
+    "arithmetic.add": {
+      "handler": "calculator.add",
+      "group": "arithmetic",
+      "label": "Add",
+      "description": "Add two numbers",
+      "params": [
+        {"name": "a", "type": "number", "label": "First Number", "required": true},
+        {"name": "b", "type": "number", "label": "Second Number", "required": true}
+      ]
+    },
+    "arithmetic.subtract": {
+      "handler": "calculator.subtract",
+      "group": "arithmetic",
+      "label": "Subtract",
+      "description": "Subtract two numbers",
+      "params": [
+        {"name": "a", "type": "number", "label": "First Number", "required": true},
+        {"name": "b", "type": "number", "label": "Second Number", "required": true}
+      ]
+    },
+    "arithmetic.multiply": {
+      "handler": "calculator.multiply",
+      "group": "arithmetic",
+      "label": "Multiply",
+      "description": "Multiply two numbers",
+      "params": [
+        {"name": "a", "type": "number", "label": "First Number", "required": true},
+        {"name": "b", "type": "number", "label": "Second Number", "required": true}
+      ]
+    },
+    "arithmetic.divide": {
+      "handler": "calculator.divide",
+      "group": "arithmetic",
+      "label": "Divide",
+      "description": "Divide two numbers",
+      "params": [
+        {"name": "a", "type": "number", "label": "Dividend", "required": true},
+        {"name": "b", "type": "number", "label": "Divisor", "required": true}
+      ]
+    },
+    "scientific.power": {
+      "handler": "calculator.power",
+      "group": "scientific",
+      "label": "Power",
+      "description": "Raise base to exponent",
+      "params": [
+        {"name": "base", "type": "number", "label": "Base", "required": true},
+        {"name": "exponent", "type": "number", "label": "Exponent", "required": true}
+      ]
+    },
+    "scientific.sqrt": {
+      "handler": "calculator.sqrt",
+      "group": "scientific",
+      "label": "Square Root",
+      "description": "Calculate square root",
+      "params": [
+        {"name": "n", "type": "number", "label": "Number", "required": true}
+      ]
+    },
+    "scientific.factorial": {
+      "handler": "calculator.factorial",
+      "group": "scientific",
+      "label": "Factorial",
+      "description": "Calculate factorial (n!)",
+      "params": [
+        {"name": "n", "type": "number", "label": "Number (integer)", "required": true}
+      ]
+    },
+    "memory.store": {
+      "handler": "calculator.memory_store",
+      "group": "memory",
+      "label": "Store",
+      "description": "Store value in memory",
+      "params": [
+        {"name": "value", "type": "number", "label": "Value", "required": true}
+      ]
+    },
+    "memory.recall": {
+      "handler": "calculator.memory_recall",
+      "group": "memory",
+      "label": "Recall",
+      "description": "Recall value from memory",
+      "params": []
+    },
+    "history.get": {
+      "handler": "calculator.get_history",
+      "group": "history",
+      "label": "View History",
+      "description": "Show calculation history",
+      "params": []
+    },
+    "history.clear": {
+      "handler": "calculator.clear_history",
+      "group": "history",
+      "label": "Clear History",
+      "description": "Clear all calculation history",
+      "params": [],
+      "confirm": true
+    },
+    "export.history": {
+      "handler": "calculator.export_history",
+      "group": "export",
+      "label": "Export History",
+      "description": "Export calculation history to file",
+      "params": [
+        {"name": "path", "type": "file", "label": "Output Path", "required": true},
+        {"name": "format", "type": "select", "label": "Format", "options": ["txt", "csv", "json"], "default": "txt"}
+      ]
+    }
+  }
+}

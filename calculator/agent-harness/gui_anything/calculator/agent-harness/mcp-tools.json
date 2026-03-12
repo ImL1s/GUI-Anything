@@ -1,0 +1,167 @@
+{
+  "tools": [
+    {
+      "name": "arithmetic__add",
+      "description": "Add two numbers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "a": {"type": "number", "description": "First number"},
+          "b": {"type": "number", "description": "Second number"}
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "arithmetic__subtract",
+      "description": "Subtract two numbers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "a": {"type": "number", "description": "First number"},
+          "b": {"type": "number", "description": "Second number"}
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "arithmetic__multiply",
+      "description": "Multiply two numbers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "a": {"type": "number", "description": "First number"},
+          "b": {"type": "number", "description": "Second number"}
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "arithmetic__divide",
+      "description": "Divide two numbers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "a": {"type": "number", "description": "Dividend"},
+          "b": {"type": "number", "description": "Divisor"}
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "scientific__power",
+      "description": "Raise base to exponent",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "base": {"type": "number", "description": "Base number"},
+          "exponent": {"type": "number", "description": "Exponent"}
+        },
+        "required": ["base", "exponent"]
+      }
+    },
+    {
+      "name": "scientific__sqrt",
+      "description": "Calculate square root",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "n": {"type": "number", "description": "Number"}
+        },
+        "required": ["n"]
+      }
+    },
+    {
+      "name": "scientific__factorial",
+      "description": "Calculate factorial (n!)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "n": {"type": "integer", "description": "Non-negative integer"}
+        },
+        "required": ["n"]
+      }
+    },
+    {
+      "name": "memory__store",
+      "description": "Store value in memory",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "value": {"type": "number", "description": "Value to store"}
+        },
+        "required": ["value"]
+      }
+    },
+    {
+      "name": "memory__recall",
+      "description": "Recall value from memory",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "history__get",
+      "description": "Show calculation history",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "history__clear",
+      "description": "Clear all calculation history",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "export__history",
+      "description": "Export calculation history to file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string", "description": "Output file path"},
+          "format": {"type": "string", "enum": ["txt", "csv", "json"], "description": "Export format", "default": "txt"}
+        },
+        "required": ["path"]
+      }
+    },
+    {
+      "name": "take_screenshot",
+      "description": "Take a screenshot of the current GUI state",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string", "description": "Output path for screenshot", "default": "screenshot.png"}
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_gui_state",
+      "description": "Get current GUI state as JSON (active panel, form values, last result)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "navigate_to",
+      "description": "Navigate to a specific panel/group in the GUI",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "panel": {"type": "string", "description": "Panel ID to navigate to", "enum": ["arithmetic", "scientific", "memory", "history", "export"]}
+        },
+        "required": ["panel"]
+      }
+    }
+  ]
+}
